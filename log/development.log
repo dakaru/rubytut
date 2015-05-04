@@ -1597,3 +1597,30 @@ Started GET "/" for 174.7.77.168 at 2015-05-04 20:59:22 +0000
 Processing by PagesController#home as HTML
   Rendered pages/home.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 90ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
+
+
+Started GET "/assets/application.css?body=1" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
+
+
+Started GET "/assets/application.js?body=1" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
+
+
+Started GET "/assets/pages.js?body=1" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 174.7.77.168 at 2015-05-04 21:21:02 +0000
