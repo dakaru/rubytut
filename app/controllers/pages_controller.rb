@@ -12,4 +12,7 @@ class PagesController < ApplicationController
     #contact us form
   end
   
+  def User
+
+  end
 end
