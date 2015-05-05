@@ -11,5 +11,9 @@ class PagesController < ApplicationController
   def contact
     #contact us form
   end
+
+  def logout
+  	#log out confirmation
+  end
   
 end
