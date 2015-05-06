@@ -21590,3 +21590,1584 @@ Processing by PagesController#home as HTML
   Rendered pages/home.html.erb within layouts/application (0.0ms)
   Rendered layouts/_header.html.erb (0.0ms)
 Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentImageToPins (20150506211648)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mALTER TABLE "pins" ADD "image_file_name" varchar(255)[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "pins" ADD "image_content_type" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mALTER TABLE "pins" ADD "image_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "pins" ADD "image_updated_at" datetime
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150506211648"]]
+  [1m[35m (167.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pins_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pins_on_user_id' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-06 14:23:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 107ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:01 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:02 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:23:03 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 66ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 14:23:04 -0700
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (16.0ms)
+  Rendered pins/new.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 74ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:23:14 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x47e09e0 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-19576-rq34d6>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"This is Johnson Creek"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Unpermitted parameters: image
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "pins" ("created_at", "description", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2015-05-06 21:23:14.877340"], ["description", "This is Johnson Creek"], ["updated_at", "2015-05-06 21:23:14.877340"], ["user_id", 1]]
+  [1m[36m (115.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pins/5
+Completed 302 Found in 125ms (ActiveRecord: 116.2ms)
+
+
+Started GET "/pins/5" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:23:15 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:24:10 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/5" for 127.0.0.1 at 2015-05-06 14:24:12 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:24:13 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/5/edit" for 127.0.0.1 at 2015-05-06 14:24:14 -0700
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/edit.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/pins/5" for 127.0.0.1 at 2015-05-06 14:24:40 -0700
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x5424ae0 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-19576-1adr2rm>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"This is Johnson Creek"}, "commit"=>"Create Pin", "id"=>"5"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 12ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:30:in `update'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started PATCH "/pins/5" for 127.0.0.1 at 2015-05-06 14:25:01 -0700
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x4732c68 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-19576-cwar7w>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"This is Johnson Creek"}, "commit"=>"Create Pin", "id"=>"5"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:30:in `update'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.0ms)
+
+
+Started PATCH "/pins/5" for 127.0.0.1 at 2015-05-06 14:25:21 -0700
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x5fcc040 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-19576-7ly5tq>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"This is Johnson Creek"}, "commit"=>"Create Pin", "id"=>"5"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 13ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:30:in `update'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (1.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 55ms (Views: 53.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:26 -0700
+
+
+Started DELETE "/pins/5" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+Processing by PinsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "id"=>"5"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "pins" WHERE "pins"."id" = ?[0m  [["id", 5]]
+  [1m[35m (84.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/pins
+Completed 302 Found in 88ms (ActiveRecord: 84.1ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 14:25:31 -0700
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:25:39 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x35490f0 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-19576-ywuo7i>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"j creek"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 6ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:24:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:25:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x54ee470 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-d00uep>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"j creek"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 34ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:24:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 87ms (Views: 87.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:26:01 -0700
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 14:26:02 -0700
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (15.0ms)
+  Rendered pins/new.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 79ms (Views: 78.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:26:08 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x57435a8 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-tzps3o>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"asdasd"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 3ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:24:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (1.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:15 -0700
+
+
+Started DELETE "/pins/4" for 127.0.0.1 at 2015-05-06 14:28:20 -0700
+Processing by PinsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "id"=>"4"}
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "pins" WHERE "pins"."id" = ?  [["id", 4]]
+  [1m[36m (146.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pins
+Completed 302 Found in 153ms (ActiveRecord: 148.2ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:28:21 -0700
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 14:29:07 -0700
+Processing by PinsController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/_form.html.erb (0.0ms)
+  Rendered pins/new.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:29:13 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x62ee2a0 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-1sphac7>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"Asdf"}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:24:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+dDlkMpmweTZcqGwbE8sjhvuHazcSCyh7cHZ2Hi5TDQ="}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:29:58 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:30:00 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-05-06 14:30:01 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jHgBWMhapQetxQNgE2Ozk4GtQu6I/jypyLeaoMfJmcA=", "user"=>{"email"=>"ryanalgie@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'ryanalgie@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-05-06 21:30:03.080603"], ["last_sign_in_at", "2015-05-06 19:52:31.184636"], ["sign_in_count", 16], ["updated_at", "2015-05-06 21:30:03.081604"]]
+  [1m[36m (37.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 38.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 56ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:30:03 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:30:05 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 50ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 14:30:06 -0700
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:30:12 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x4e7e3d8 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-2nv717>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"asdf"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 3ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:24:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:31:17 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x627be98 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-dibz6c>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"asdf"}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pins_controller.rb:24:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:32:14 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x591e0b8 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-110lt3q>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"asdf"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/67886dfb4cb588a316f5feadf4d845e320150506-32496-178nevf.png"
+[paperclip] Content Type Spoof: Filename Johnson_Creek.png (["image/png"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/67886dfb4cb588a316f5feadf4d845e320150506-32496-ab3ugi.png"
+[paperclip] Content Type Spoof: Filename Johnson_Creek.png (["image/png"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered pins/_form.html.erb (2.0ms)
+  Rendered pins/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 119ms (Views: 53.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:15 -0700
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x5781ac8 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-11wrch7>, @original_filename="Johnson Creek.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"Johnson Creek.png\"\r\nContent-Type: image/png\r\n">, "description"=>"asdf"}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/67886dfb4cb588a316f5feadf4d845e320150506-32496-dq2ja1.png"
+[paperclip] Content Type Spoof: Filename Johnson_Creek.png (["image/png"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[35m (0.0ms)[0m  begin transaction
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/67886dfb4cb588a316f5feadf4d845e320150506-32496-825nvh.png"
+[paperclip] Content Type Spoof: Filename Johnson_Creek.png (["image/png"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 93ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:22 -0700
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x5838af8 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-1uxhwf1>, @original_filename="site001.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"site001.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"asdf"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/420e76f052363f604db99f9fa3c0384720150506-32496-1jtftl9.jpg"
+[paperclip] Content Type Spoof: Filename site001.jpg (["image/jpeg"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/420e76f052363f604db99f9fa3c0384720150506-32496-fvgtcy.jpg"
+[paperclip] Content Type Spoof: Filename site001.jpg (["image/jpeg"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 126ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:32 -0700
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x5848e18 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-1g4yv4e>, @original_filename="246459_10151572892640120_1241412527_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"246459_10151572892640120_1241412527_n.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Selfie"}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/467ef0725a31548f59605369bb654b6420150506-32496-sdjgz8.jpg"
+[paperclip] Content Type Spoof: Filename 246459_10151572892640120_1241412527_n.jpg (["image/jpeg"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[35m (0.0ms)[0m  begin transaction
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/467ef0725a31548f59605369bb654b6420150506-32496-5obwx0.jpg"
+[paperclip] Content Type Spoof: Filename 246459_10151572892640120_1241412527_n.jpg (["image/jpeg"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 97ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:32:52 -0700
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x579b250 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-32496-5v3tfl>, @original_filename="AniME-Ryan.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"AniME-Ryan.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"cartoon selfie"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-32496-mq4zb7.jpg"
+[paperclip] Content Type Spoof: Filename AniME-Ryan.jpg (["image/jpeg"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-32496-1lgddkj.jpg"
+[paperclip] Content Type Spoof: Filename AniME-Ryan.jpg (["image/jpeg"]), content type discovered from file command: . See documentation to allow this combination.
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 105ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:33:49 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-06 14:34:12 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 106ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:13 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:34:14 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (1.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 42.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 14:34:15 -0700
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (15.0ms)
+  Rendered pins/new.html.erb within layouts/application (17.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 78ms (Views: 61.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 14:34:26 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x476fc40 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-41740-18298bq>, @original_filename="AniME-Ryan.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"AniME-Ryan.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"cartoon selfie"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Command :: identify -format '%wx%h,%[exif:orientation]' "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh.jpg[0]" 2>NUL
+Command :: identify -format %m "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh.jpg[0]"
+Command :: convert "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh.jpg[0]" -auto-orient -resize "300x300>" "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh20150506-41740-t04dvj"
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh20150506-41740-t04dvj"
+[paperclip] Error while determining content type: No such file or directory - file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh20150506-41740-t04dvj"
+Command :: identify -format '%wx%h,%[exif:orientation]' "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh.jpg[0]" 2>NUL
+Command :: identify -format %m "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh.jpg[0]"
+Command :: convert "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh.jpg[0]" -auto-orient -resize "100x100>" "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh20150506-41740-17z15s6"
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh20150506-41740-17z15s6"
+[paperclip] Error while determining content type: No such file or directory - file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-teoqzh20150506-41740-17z15s6"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `image_content_type`
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "pins" ("created_at", "description", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2015-05-06 21:34:27.143102"], ["description", "cartoon selfie"], ["image_content_type", "image/jpeg"], ["image_file_name", "AniME-Ryan.jpg"], ["image_file_size", 57958], ["image_updated_at", "2015-05-06 21:34:26.972939"], ["updated_at", "2015-05-06 21:34:27.143102"], ["user_id", 1]]
+  [1m[36m (98.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pins/6
+Completed 302 Found in 296ms (ActiveRecord: 99.9ms)
+
+
+Started GET "/pins/6" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:27 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:34:29 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/6" for 127.0.0.1 at 2015-05-06 14:34:32 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:34:33 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/6/edit" for 127.0.0.1 at 2015-05-06 14:34:47 -0700
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/edit.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/pins/6" for 127.0.0.1 at 2015-05-06 14:34:53 -0700
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x4b4aa30 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-41740-mjekh8>, @original_filename="AniME-Ryan.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"AniME-Ryan.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"cartoon selfie"}, "commit"=>"Create Pin", "id"=>"6"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Command :: identify -format '%wx%h,%[exif:orientation]' "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp.jpg[0]" 2>NUL
+Command :: identify -format %m "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp.jpg[0]"
+Command :: convert "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp.jpg[0]" -auto-orient -resize "300x300>" "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp20150506-41740-h4mqq6"
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp20150506-41740-h4mqq6"
+[paperclip] Error while determining content type: No such file or directory - file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp20150506-41740-h4mqq6"
+Command :: identify -format '%wx%h,%[exif:orientation]' "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp.jpg[0]" 2>NUL
+Command :: identify -format %m "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp.jpg[0]"
+Command :: convert "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp.jpg[0]" -auto-orient -resize "100x100>" "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp20150506-41740-1ddyxbc"
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp20150506-41740-1ddyxbc"
+[paperclip] Error while determining content type: No such file or directory - file -b --mime "C:/Users/Seren/AppData/Local/Temp/e9795c689dce40c2d8de68564cf5752020150506-41740-1o3r8pp20150506-41740-1ddyxbc"
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "pins" SET "image_file_name" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "pins"."id" = 6[0m  [["image_file_name", "AniME-Ryan.jpg"], ["image_updated_at", "2015-05-06 21:34:53.623477"], ["updated_at", "2015-05-06 21:34:53.792184"]]
+[paperclip] deleting d:/coding/rubytut/public/system/pins/images/000/000/006/original/AniME-Ryan.jpg
+[paperclip] deleting d:/coding/rubytut/public/system/pins/images/000/000/006/medium/AniME-Ryan.jpg
+[paperclip] deleting d:/coding/rubytut/public/system/pins/images/000/000/006/thumb/AniME-Ryan.jpg
+  [1m[35m (73.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/pins/6
+Completed 302 Found in 268ms (ActiveRecord: 74.4ms)
+
+
+Started GET "/pins/6" for 127.0.0.1 at 2015-05-06 14:34:53 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:53 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:34:54 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:34:55 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/6" for 127.0.0.1 at 2015-05-06 14:43:25 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:52:46 -0700
+
+
+Started GET "/pins/6" for 127.0.0.1 at 2015-05-06 14:52:47 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPin Load (1.0ms)[0m  [1mSELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:52:54 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:52:56 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:53:54 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    12:   <tbody>
+    13:     <% @pins.each do |pin| %>
+    14:       <tr>
+    15:         <td><%= image_tag @pin.image.url %></td>
+    16:         <td><%= pin.description %></td>
+    17:         <td><%= pin.user_id %></td>
+    18:         <td><%= link_to 'Show', pin, class: "btn btn-default"  %></td>
+  app/views/pins/index.html.erb:15:in `block in _app_views_pins_index_html_erb___1033026011_48212520'
+  app/views/pins/index.html.erb:13:in `_app_views_pins_index_html_erb___1033026011_48212520'
+  app/controllers/pins_controller.rb:8:in `index'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:56:51 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:57:58 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined local variable or method `small' for #<#<Class:0x5a66a68>:0x593fb08>):
+    12:   <tbody>
+    13:     <% @pins.each do |pin| %>
+    14:       <tr>
+    15:         <td><%= image_tag pin.image.url(small) %></td>
+    16:         <td><%= pin.description %></td>
+    17:         <td><%= pin.user_id %></td>
+    18:         <td><%= link_to 'Show', pin, class: "btn btn-default"  %></td>
+  app/views/pins/index.html.erb:15:in `block in _app_views_pins_index_html_erb___1033026011_46789284'
+  app/views/pins/index.html.erb:13:in `_app_views_pins_index_html_erb___1033026011_46789284'
+  app/controllers/pins_controller.rb:8:in `index'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 54ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+
+Started GET "/system/pins/images/000/000/006/small/AniME-Ryan.jpg?1430948093" for 127.0.0.1 at 2015-05-06 14:58:27 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system/pins/images/000/000/006/small/AniME-Ryan.jpg"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (24.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:59:04 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 14:59:05 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:59:10 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-06 14:59:45 -0700
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 14:59:46 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700

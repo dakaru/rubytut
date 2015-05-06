@@ -3,14 +3,16 @@
 <table style="width:50%">
   <thread>
     <tr>
+      <th>Image</th>
       <th>Description</th>
-      <th>User ID</th>
+      <th>User</th>
     </tr>
   </thread>
   
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
+        <td><%= image_tag pin.image.url(:medium) %></td>
         <td><%= pin.description %></td>
         <td><%= pin.user_id %></td>
         <td><%= link_to 'Show', pin, class: "btn btn-default"  %></td>
