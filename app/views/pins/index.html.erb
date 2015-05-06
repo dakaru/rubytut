@@ -1,25 +1,29 @@
 <h1>Listing pins</h1>
 
-<table>
-  <thead>
+<table style="width:50%">
+  <thread>
     <tr>
       <th>Description</th>
-      <th colspan="4"></th>
+      <th>User ID</th>
     </tr>
-  </thead>
-
+  </thread>
+  
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
         <td><%= pin.description %></td>
+        <td><%= pin.user_id %></td>
         <td><%= link_to 'Show', pin, class: "btn btn-default"  %></td>
+        <% if pin.user = current_user %>
         <td><%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-default"  %></td>
         <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Pin', new_pin_path, class: "btn btn-primary" %>
+<% if user_signed_in?%>
+  <%= link_to 'New Pin', new_pin_path, class: "btn btn-primary" %>
+<% end %>
