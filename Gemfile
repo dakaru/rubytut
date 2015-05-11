@@ -29,7 +29,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'paperclip', '~> 4.0'
 #add bootstrap
 gem 'bootstrap-sass'
-
+#AWS image storage
+gem 'aws-sdk', '< 3.0'
 #adds execjs
 gem 'execjs'
 #adds progress bar

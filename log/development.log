@@ -23171,3 +23171,1724 @@ Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 15:00:10 -0700
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 15:04:43 -0700
+Processing by PinsController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 65ms (Views: 36.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2015-05-06 15:05:32 -0700
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x359cb68 @tempfile=#<Tempfile:C:/Users/Seren/AppData/Local/Temp/RackMultipart20150506-41740-1h9qqgz>, @original_filename="dawson-back-kick.gif", @content_type="image/gif", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"dawson-back-kick.gif\"\r\nContent-Type: image/gif\r\n">, "description"=>"Dawson's Back Kick"}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Command :: identify -format '%wx%h,%[exif:orientation]' "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z.gif[0]" 2>NUL
+Command :: identify -format %m "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z.gif[0]"
+Command :: convert "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z.gif" -coalesce -auto-orient -resize "300x300>" -layers "optimize" "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z20150506-41740-iguj3g"
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z20150506-41740-iguj3g"
+[paperclip] Error while determining content type: No such file or directory - file -b --mime "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z20150506-41740-iguj3g"
+Command :: identify -format '%wx%h,%[exif:orientation]' "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z.gif[0]" 2>NUL
+Command :: identify -format %m "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z.gif[0]"
+Command :: convert "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z.gif" -coalesce -auto-orient -resize "100x100>" -layers "optimize" "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z20150506-41740-1tbykd5"
+Command :: file -b --mime "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z20150506-41740-1tbykd5"
+[paperclip] Error while determining content type: No such file or directory - file -b --mime "C:/Users/Seren/AppData/Local/Temp/c17ab2cb84166af80eb0c2b93ea3cfff20150506-41740-c2lb8z20150506-41740-1tbykd5"
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `image_content_type`
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "pins" ("created_at", "description", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-05-06 22:05:34.140282"], ["description", "Dawson's Back Kick"], ["image_content_type", "image/gif"], ["image_file_name", "dawson-back-kick.gif"], ["image_file_size", 3171523], ["image_updated_at", "2015-05-06 22:05:32.427521"], ["updated_at", "2015-05-06 22:05:34.140282"], ["user_id", 1]]
+  [1m[35m (174.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/pins/7
+Completed 302 Found in 1927ms (ActiveRecord: 174.1ms)
+
+
+Started GET "/pins/7" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 15:05:34 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 15:05:39 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 15:05:54 -0700
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (0.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2015-05-06 15:05:56 -0700
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 15:05:58 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 41ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/7/edit" for 127.0.0.1 at 2015-05-06 15:05:59 -0700
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/_form.html.erb (1.0ms)
+  Rendered pins/edit.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/pins/7" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zn8miqUrjBcg4hCz1AuqyAjkGS0LVqB+K/7qO/3jazM=", "pin"=>{"description"=>"Dawson's Back Kick"}, "commit"=>"Create Pin", "id"=>"7"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pins/7
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/7" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPin Load (0.0ms)[0m  SELECT  "pins".* FROM "pins"  WHERE "pins"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-06 15:06:01 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-06 15:06:02 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2015-05-07 11:07:41 -0700
+Processing by PagesController#contact as HTML
+  Rendered pages/contact.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 64ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-07 11:07:41 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-07 11:07:42 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-07 11:07:43 -0700
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 53ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 85ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-08 10:06:54 -0700
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-08 10:06:55 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 62ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-08 10:06:57 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2015-05-08 10:06:58 -0700
+Processing by PagesController#contact as HTML
+  Rendered pages/contact.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2015-05-08 10:06:59 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 87ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-08 10:07:02 -0700
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2015-05-08 11:36:37 -0700
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.0ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pins/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-08 11:36:38 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:44:48 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 193ms
+
+ActionView::Template::Error (Invalid CSS after "...port-wall.jpg')": expected "{", was ";"
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__923742064_43754172'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.7ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:45:24 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__923742064_43754172'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:45:25 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__923742064_43754172'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:45:26 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__923742064_43754172'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:45:26 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__923742064_43754172'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:45:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___816973273_43811928'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:45:44 -0700
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___816973273_43811928'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:46:08 -0700
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___816973273_43811928'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:46:09 -0700
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___816973273_43811928'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:46:27 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (Invalid CSS after "": expected selector, was ""
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___929120547_43746444'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:47:01 -0700
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (Invalid CSS after "...ort-wall.jpg'),": expected "{", was "}"
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___929120547_43746444'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:47:02 -0700
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (Invalid CSS after "...ort-wall.jpg'),": expected "{", was "}"
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___929120547_43746444'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:47:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (Invalid CSS after "...ort-wall.jpg'),": expected "{", was "}"
+  (in d:/coding/rubytut/app/assets/stylesheets/pages.css.scss:4)):
+    2: <html>
+    3: <head>
+    4:   <title>Sports4Geeks</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  app/assets/stylesheets/pages.css.scss:4
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__577516726_43811304'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 377ms (Views: 375.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:20 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 12:52:22 -0700
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 61ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:52:23 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 47ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:52:44 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:53:19 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+
+Started GET "/sheep.png" for 127.0.0.1 at 2015-05-11 12:54:33 -0700
+
+ActionController::RoutingError (No route matches [GET] "/sheep.png"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+
+Started GET "/sheep.png" for 127.0.0.1 at 2015-05-11 12:55:16 -0700
+
+ActionController::RoutingError (No route matches [GET] "/sheep.png"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:55:38 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:38 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:38 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+
+Started GET "/sheep.png" for 127.0.0.1 at 2015-05-11 12:55:39 -0700
+
+ActionController::RoutingError (No route matches [GET] "/sheep.png"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+
+Started GET "/sport-wall.jpg" for 127.0.0.1 at 2015-05-11 12:56:45 -0700
+
+ActionController::RoutingError (No route matches [GET] "/sport-wall.jpg"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:57:37 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:58:07 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 12:59:46 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 49ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 12:59:47 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 48ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:13 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:00:15 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:16 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:22 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:00:32 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:01:38 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:01:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:01:39 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:01:39 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:02:42 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 48ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:02:42 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:02:42 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:02:42 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:02:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:02:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:02:43 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:02:43 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:02:43 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:02:43 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:02:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:02:43 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 49ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:04:13 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:08:44 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:24 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:09:36 -0700
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/pins.css?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/pins.js?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 13:13:47 -0700
