@@ -1,0 +1,161 @@
+.navbarOrange {
+  background-color: #ff9355;
+  border-color: #ff9355;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ff9355), to(#ff7322));
+  background-image: -webkit-linear-gradient(top, #ff9355, 0%, #ff7322, 100%);
+  background-image: -moz-linear-gradient(top, #ff9355 0%, #ff7322 100%);
+  background-image: linear-gradient(to bottom, #ff9355 0%, #ff7322 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffb388', endColorstr='#ffff9355', GradientType=0);
+}
+.navbarOrange .navbar-brand {
+  color: #ffffff;
+}
+.navbarOrange .navbar-brand:hover,
+.navbarOrange .navbar-brand:focus {
+  color: #000000;
+  background-color: transparent;
+}
+.navbarOrange .navbar-text {
+  color: #ffffff;
+}
+.navbarOrange .navbar-nav > li:last-child > a {
+  border-right: 1px solid #ff7e34;
+}
+.navbarOrange .navbar-nav > li > a {
+  color: #ffffff;
+  border-left: 1px solid #ff7e34;
+}
+.navbarOrange .navbar-nav > li > a:hover,
+.navbarOrange .navbar-nav > li > a:focus {
+  color: #000000;
+  background-color: transparent;
+}
+.navbarOrange .navbar-nav > .active > a,
+.navbarOrange .navbar-nav > .active > a:hover,
+.navbarOrange .navbar-nav > .active > a:focus {
+  color: #000000;
+  background-color: #ff7e34;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ff7e34), to(#ff9e67));
+  background-image: -webkit-linear-gradient(top, #ff7e34, 0%, #ff9e67, 100%);
+  background-image: -moz-linear-gradient(top, #ff7e34 0%, #ff9e67 100%);
+  background-image: linear-gradient(to bottom, #ff7e34 0%, #ff9e67 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff7e34', endColorstr='#ffff9e67', GradientType=0);
+}
+.navbarOrange .navbar-nav > .disabled > a,
+.navbarOrange .navbar-nav > .disabled > a:hover,
+.navbarOrange .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.navbarOrange .navbar-toggle {
+  border-color: #dddddd;
+}
+.navbarOrange .navbar-toggle:hover,
+.navbarOrange .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+.navbarOrange .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+.navbarOrange .navbar-collapse,
+.navbarOrange .navbar-form {
+  border-color: #ff7c31;
+}
+.navbarOrange .navbar-nav > .dropdown > a:hover .caret,
+.navbarOrange .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #000000;
+  border-bottom-color: #000000;
+}
+.navbarOrange .navbar-nav > .open > a,
+.navbarOrange .navbar-nav > .open > a:hover,
+.navbarOrange .navbar-nav > .open > a:focus {
+  background-color: #ff7e34;
+  color: #000000;
+}
+.navbarOrange .navbar-nav > .open > a .caret,
+.navbarOrange .navbar-nav > .open > a:hover .caret,
+.navbarOrange .navbar-nav > .open > a:focus .caret {
+  border-top-color: #000000;
+  border-bottom-color: #000000;
+}
+.navbarOrange .navbar-nav > .dropdown > a .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+@media (max-width: 767) {
+  .navbarOrange .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbarOrange .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbarOrange .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #000000;
+    background-color: transparent;
+  }
+  .navbarOrange .navbar-nav .open .dropdown-menu > .active > a,
+  .navbarOrange .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbarOrange .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #000000;
+    background-color: #ff7e34;
+  }
+  .navbarOrange .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbarOrange .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbarOrange .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+.navbarOrange .navbar-link {
+  color: #ffffff;
+}
+.navbarOrange .navbar-link:hover {
+  color: #000000;
+}
+
+.btnOrange {
+  background-color: #ff9355;
+  border-color: #ff9355;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-color: #ff8641;
+  background-image: -moz-linear-gradient(top,#ff9355,#ff7322);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#ff9355),to(#ff7322));
+  background-image: -webkit-linear-gradient(top,#ff9355,#ff7322);
+  background-image: -o-linear-gradient(top,#ff9355,#ff7322);
+  background-image: linear-gradient(to bottom,#ff9355,#ff7322);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9355', endColorstr='#fffe7221', GradientType=0);
+  border-color: #ff7322 #ff7322 #d54e00;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+.btnOrange:hover,
+.btnOrange:focus {
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position .1s linear;
+  -moz-transition: background-position .1s linear;
+  -o-transition: background-position .1s linear;
+  transition: background-position .1s linear;
+}
+.btnOrange:hover,
+.btnOrange:focus {
+  background-color: #ff7322;
+}
+.btnOrange:active,
+.btnOrange.active,
+.btnOrange.active:hover {
+  background-color: #ff833c;
+  border-color: #ff7322;
+}
+.btnOrange.disabled:hover,
+.btnOrange.disabled:focus,
+.btnOrange.disabled:active,
+.btnOrange.disabled.active,
+.btnOrange[disabled] .btnOrange:hover,
+.btnOrange[disabled] .btnOrange:focus,
+.btnOrange[disabled] .btnOrange:active,
+.btnOrange[disabled] .btnOrange.active {
+  background-color: #ff9355;
+  border-color: #ff9355;
+}
